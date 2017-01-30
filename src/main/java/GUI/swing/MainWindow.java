@@ -340,8 +340,8 @@ public class MainWindow {
         milkFarms.setText(Integer.toString(MilkFarm.getMilkFarms()));
     }
 
-    public static void setEnemyTimerToGui() {
-        enemyTimeTextField.setText(Integer.toString(EnemyTimer.getSecondsBeforeEnemyStartsInvasion()));
+    public static void setEnemyTimerToGui(int secondsBeforeEnemyStartsInvasion) {
+        enemyTimeTextField.setText(Integer.toString(secondsBeforeEnemyStartsInvasion));
     }
 
     public static void setUpgradedGMT0Gui() {

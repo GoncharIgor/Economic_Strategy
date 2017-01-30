@@ -1,21 +1,30 @@
 package timers;
 
 import GUI.swing.MainWindow;
+import war.FightVsEnemy;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class EnemyTimer {
     private Timer timerFarm = new Timer();
-    private static int secondsBeforeEnemyStartsInvasion = 300;
+    private static int secondsBeforeEnemyStartsInvasion = 5;
 
     private TimerTask tt = new TimerTask() {
 
         public void run() {
-            MainWindow.setEnemyTimerToGui();
-            secondsBeforeEnemyStartsInvasion--;
+            if (secondsBeforeEnemyStartsInvasion > 0) {
+                MainWindow.setEnemyTimerToGui(secondsBeforeEnemyStartsInvasion);
+                secondsBeforeEnemyStartsInvasion--;
+            } else {
+                MainWindow.setEnemyTimerToGui(secondsBeforeEnemyStartsInvasion);
+                System.out.println("The result of your fight is: " + FightVsEnemy.fight());
+                // System.exit(0);
+            }
+
         }
     };
+
 
     public void go() {
         timerFarm.scheduleAtFixedRate(tt, 200, 1000);
@@ -24,4 +33,5 @@ public class EnemyTimer {
     public static int getSecondsBeforeEnemyStartsInvasion() {
         return secondsBeforeEnemyStartsInvasion;
     }
+
 }

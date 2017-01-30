@@ -4,13 +4,13 @@ import army.Mage;
 import army.Warrior;
 
 public class FightVsEnemy {
-    private int enemyWarriors = 50;
-    private int enemyMages = 50;
+    private static int enemyWarriors = 50;
+    private static int enemyMages = 50;
 
-    private int yourWarriors;
-    private int yourMages;
+    private static int yourWarriors;
+    private static int yourMages;
 
-    public boolean fight() {
+    public static boolean fight() {
         boolean victory = false;
         yourWarriors = Warrior.warriorCount;
         yourMages = Mage.mageCount;

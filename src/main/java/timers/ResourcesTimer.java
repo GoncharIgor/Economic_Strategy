@@ -11,7 +11,7 @@ import java.util.TimerTask;
 /**
  * Created by i.gonchar on 12/9/2015.
  */
-public class GoldTimer extends  Timer {
+public class ResourcesTimer extends  Timer {
     Timer timerGold = new Timer();
     TimerTask timeTask = new TimerTask() {
 
@@ -21,6 +21,7 @@ public class GoldTimer extends  Timer {
 
             Iron.ironIncrease();
             MainWindow.setIronToGui();
+
             MainWindow.allButtonsCheck();
             CityMethods.cityFoodCheck();
         }

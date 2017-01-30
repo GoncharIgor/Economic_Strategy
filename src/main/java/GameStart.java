@@ -27,7 +27,7 @@ public class GameStart extends Application {
         MainWindow gameWindow = new MainWindow();
 
         MinesTimer mineTime = new MinesTimer();
-        GoldTimer goldTimer = new GoldTimer();
+        ResourcesTimer goldTimer = new ResourcesTimer();
         FoodTimer foodTimer = new FoodTimer();
         FarmTimer farmTimer = new FarmTimer();
         EnemyTimer enemyTimer = new EnemyTimer();
