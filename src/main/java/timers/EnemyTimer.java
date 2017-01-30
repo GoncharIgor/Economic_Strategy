@@ -8,7 +8,7 @@ import java.util.TimerTask;
 
 public class EnemyTimer {
     private Timer timerFarm = new Timer();
-    private static int secondsBeforeEnemyStartsInvasion = 5;
+    private static int secondsBeforeEnemyStartsInvasion = 300;
 
     private TimerTask tt = new TimerTask() {
 
