@@ -7,8 +7,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class EnemyTimer {
-    private Timer timerFarm = new Timer();
-    private static int secondsBeforeEnemyStartsInvasion = 300;
+    private Timer timerEnemy = new Timer();
+    private static int secondsBeforeEnemyStartsInvasion = 5;
 
     private TimerTask tt = new TimerTask() {
 
@@ -19,7 +19,8 @@ public class EnemyTimer {
             } else {
                 MainWindow.setEnemyTimerToGui(secondsBeforeEnemyStartsInvasion);
                 System.out.println("The result of your fight is: " + FightVsEnemy.fight());
-                // System.exit(0);
+                timerEnemy.cancel();
+                timerEnemy.purge();
             }
 
         }
@@ -27,7 +28,7 @@ public class EnemyTimer {
 
 
     public void go() {
-        timerFarm.scheduleAtFixedRate(tt, 200, 1000);
+        timerEnemy.scheduleAtFixedRate(tt, 200, 1000);
     }
 
     public static int getSecondsBeforeEnemyStartsInvasion() {

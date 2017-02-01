@@ -8,6 +8,22 @@
     <artifactId>strategy</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
+    <name>${project.artifactId}</name>
+    <description>
+        ${project.name} - an economic game strategy
+        The Project version: ${project.version}
+    </description>
+    <properties>
+        <testNG.version>6.9.6</testNG.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testNG.version}</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -17,6 +33,20 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.14.1</version>
+                <configuration>
+                    <testFailureIgnore>false</testFailureIgnore>
+
+                    <!-- Suite testng xml file to consider for test execution -->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/java/testing.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>

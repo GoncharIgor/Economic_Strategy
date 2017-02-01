@@ -15,6 +15,7 @@ public class Gold {
     public static void increaseGoldAmount(int goldAmount){
         Gold.goldAmount += goldAmount;
     }
+
     public static int getGoldAmount(){
         return goldAmount;
     }
@@ -24,5 +25,9 @@ public class Gold {
         int updatedGoldMines = GoldMine.getUpdatedGoldMines();
         goldAmount += goldMines + updatedGoldMines;
         return goldAmount;
+    }
+
+    public static void setGoldAmount(int goldAmount) {
+        Gold.goldAmount = goldAmount;
     }
 }

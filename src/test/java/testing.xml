@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SystemTestSuite" verbose="1">
+
+    <test name="SystemTest" parallel="false" preserve-order="true">
+        <classes>
+            <class name="food.FoodTest"></class>
+            <class name="resources.GoldTest"></class>
+        </classes>
+    </test>
+
+</suite>
