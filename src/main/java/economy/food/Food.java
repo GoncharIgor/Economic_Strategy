@@ -12,7 +12,7 @@ public class Food {
 
     public static int foodIncrease (){
         int food = Food.getFoodAccount();
-        int units = Unit.allUnits;
+        int units = Unit.getAllUnits();
         int farms = MilkFarm.getMilkFarms();
         generalFoodAmount  = (food - units) + farms;
         return generalFoodAmount;

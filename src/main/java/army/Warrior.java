@@ -9,7 +9,8 @@ public class Warrior extends Unit {
     public static int warriorCount = 0;
 
     public Warrior() {
-        allUnits++;
+        int allUnits = getAllUnits();
+        setAllUnits(allUnits + 1);
         warriorCount++;
         // For GUI
         MainWindow.setWarrToGui();

@@ -329,7 +329,7 @@ public class MainWindow {
     }
 
     public static void setMageToGui() {
-        textFieldMage.setText(Integer.toString(Mage.mageCount));
+        textFieldMage.setText(Integer.toString(Mage.getMageCount()));
     }
 
     public static void setGMTGui() {

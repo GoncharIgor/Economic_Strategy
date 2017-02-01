@@ -6,6 +6,7 @@
         <classes>
             <class name="food.FoodTest"></class>
             <class name="resources.GoldTest"></class>
+            <class name="army.MageTest"></class>
         </classes>
     </test>
 

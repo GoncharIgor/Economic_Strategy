@@ -13,7 +13,7 @@ public class FightVsEnemy {
     public static boolean fight() {
         boolean victory = false;
         yourWarriors = Warrior.warriorCount;
-        yourMages = Mage.mageCount;
+        yourMages = Mage.getMageCount();
 
         if (yourWarriors >= enemyWarriors && yourMages >= enemyMages) {
             victory = true;
