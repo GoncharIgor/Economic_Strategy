@@ -2,9 +2,7 @@ package army;
 
 import GUI.swing.MainWindow;
 
-/**
- * Created by Home on 12.12.2015.
- */
+
 public class HeavyWarrior extends Warrior {
     private static int heavyWarriorCount = 0;
 

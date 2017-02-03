@@ -17,6 +17,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 
 /**
  * Created by i.gonchar on 12/8/2015.
@@ -406,6 +407,10 @@ public class MainWindow {
     public static void endNotification() {
      // JOptionPane.showMessageDialog(null, "You have failed the city!", "End Game", JOptionPane.INFORMATION_MESSAGE, endGame);
       JOptionPane.showMessageDialog(null, "You have failed the city!", "End Game", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void closeFrame(){
+        frame.dispose();
     }
 
 }
