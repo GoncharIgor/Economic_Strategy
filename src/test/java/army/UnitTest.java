@@ -13,6 +13,7 @@ public class UnitTest extends BaseTest {
     private Unit module;
     private Mage mage;
     private Warrior warrior;
+    private Worker worker;
 
     @BeforeMethod
     public void setUp() {
@@ -35,6 +36,13 @@ public class UnitTest extends BaseTest {
     @Test
     public void testUnitCountAfterAddingMage() {
         mage = new Mage();
+        int actualCount = Unit.getAllUnits();
+        Assert.assertEquals(actualCount, 1, "Incorrect units count");
+    }
+
+    @Test
+    public void testUnitCountAfterAddingWorker() {
+        worker = new Worker();
         int actualCount = Unit.getAllUnits();
         Assert.assertEquals(actualCount, 1, "Incorrect units count");
     }
