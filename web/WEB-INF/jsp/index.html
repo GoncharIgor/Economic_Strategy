@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Economic Strategy</title>
+    <link rel="icon" href="../../img/favicon.ico">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+    <!--Custom Search Issue Page css-->
+    <link type="text/css" rel="stylesheet" href="../../css/index.css">
+
+    <!--Custom Search Issue Page scripts-->
+    <script type="text/javascript" src="../../js/index.js"></script>
+
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext' rel='stylesheet'
+          type='text/css'>
+</head>
+
+<body>
+
+<header></header>
+
+<section>
+
+    <div id="main-container-wrapper" class="container-fluid">
+        <div class="row">
+            <div id="canvas-column" class="col-md-8">
+                <canvas id="game-canvas"></canvas>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <h2 id="buildings-header">Buildings</h2>
+                    <h4>Mines</h4>
+                    <button class="btn btn-md" onclick="addGoldMine()"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Gold
+                        Mine
+                    </button>
+                    <button class="btn btn-md" onclick="addIronMine()"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Iron
+                        Mine
+                    </button>
+                    <button id="addStoneMineButton" class="btn btn-md"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Stone
+                        Mine
+                    </button>
+                    <h4>Farms</h4>
+                    <button class="btn btn-md"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Milk Farm
+                    </button>
+                    <button class="btn btn-md"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Meat Farm
+                    </button>
+                </div>
+                <div class="row">
+                    <h2 id="units-header">Units</h2>
+                    <h4>City</h4>
+                    <button class="btn btn-md"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Worker</button>
+                    <h4>Army</h4>
+                    <button class="btn btn-md"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Warrior
+                    </button>
+                    <button class="btn btn-md"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Heavy Warrior
+                    </button>
+                    <button class="btn btn-md"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Mage</button>
+                </div>
+                <div class="row">
+                    <h2>Current City State</h2>
+                    <div class="row">
+
+
+                        <div class="col-md-4">
+                            <h4>Mines</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Gold Mines:
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="resources-indicator" id="gold-mines-amount" type="text">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Iron Mines:
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="resources-indicator" id="iron-mines-amount" type="text">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Stone Mines:
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="resources-indicator" id="stone-mines-amount" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <h4>Farms</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Milk Farms:
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="resources-indicator" id="milk-farms-amount" type="text">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Meat Farms:
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="resources-indicator" id="meat-farms-amount" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <h4>Units</h4>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Warrior:
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="resources-indicator" id="warriors-amount" type="text">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Heavy Warrior:
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="resources-indicator" id="heavy-warriors-amount" type="text">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Mage:
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="resources-indicator" id="mages-amount" type="text">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Worker:
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="resources-indicator" id="workers-amount" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="box pull-right">
+                        <label for="qty"><abbr title="Quantity">Tax %</abbr></label>
+                        <input id="qty" value="0"/>
+                        <button class="test-css-box" id="down" onclick="modify_qty(-1)">-1</button>
+                        <button class="test-css-box" id="up" onclick="modify_qty(1)">+1</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+
+<footer class="footer">
+    <div class="container-fluid">
+        Gold: <input class="resources-indicator" id="gold-amount" type="text">
+        Iron: <input class="resources-indicator" id="iron-amount" type="text">
+        Stone: <input class="resources-indicator" id="stone-amount" type="text">
+        Stone: <input id="info-textfield" class="pull-right" type="text" disabled>
+    </div>
+
+</footer>
+
+</body>
+</html>
